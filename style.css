@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #7d2ae8; /* Fundo roxo vibrante */
+}
+
+.wrapper {
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    position: relative;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 12px 20px;
+    z-index: 2; /* Fica acima do slider */
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    pointer-events: none; /* AJUSTE: Faz o clique passar direto para o 'li' */
+    transition: color 0.4s ease;
+}
+
+/* O texto da aba ativa fica branco */
+nav ul li.active a {
+    color: #fff; 
+}
+
+nav ul li a i {
+    font-size: 18px;
+}
+
+/* O indicador deslizante */
+.slider {
+    position: absolute;
+    height: 100%;
+    width: 0px; /* O JS vai definir a largura inicial exata da primeira aba */
+    left: 0;
+    top: 0;
+    background: #7d2ae8;
+    border-radius: 8px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efeito elástico */
+}
